@@ -1,0 +1,123 @@
+# Cinematic Multi-Language Video Studio - Model Configuration
+# Copy this to config/models.yaml and adjust paths for your system
+# All paths should use forward slashes (/) even on Windows
+
+models:
+  # Large Language Model for story analysis, character generation, prompt engineering
+  llm:
+    provider: local_python
+    backend: transformers
+    model_path: "C:/Models/llama-3-8b-instruct"
+    device: "cuda"
+    torch_dtype: "float16"
+    load_in_4bit: true
+    load_in_8bit: false
+    trust_remote_code: false
+    bnb_4bit_compute_dtype: "float16"
+    bnb_4bit_quant_type: "nf4"
+    bnb_4bit_use_double_quant: true
+    max_new_tokens: 4096
+    temperature: 0.7
+    top_p: 0.9
+    do_sample: true
+
+  # Transcription (Speech-to-Text)
+  transcription:
+    provider: local_python
+    backend: faster_whisper
+    model_path: "C:/Models/whisper-large-v3"
+    device: "cuda"
+    compute_type: "float16"
+    cpu_threads: 4
+    num_workers: 1
+    download_root: null
+
+  # Translation
+  translation:
+    provider: local_python
+    backend: transformers
+    model_path: "C:/Models/nllb-200-distilled-600M"
+    device: "cuda"
+    torch_dtype: "float16"
+    load_in_4bit: true
+    src_lang: "auto"
+    tgt_lang: "eng_Latn"
+
+  # Language Detection
+  language_detection:
+    provider: local_python
+    backend: fasttext
+    model_path: "C:/Models/lid.176.bin"
+
+  # Embeddings
+  embedding:
+    provider: local_python
+    backend: sentence_transformers
+    model_path: "C:/Models/bge-large-en-v1.5"
+    device: "cuda"
+
+  # Image Generation (SDXL)
+  image:
+    provider: local_python
+    backend: diffusers
+    model_path: "C:/Models/sdxl-base"
+    refiner_path: "C:/Models/sdxl-refiner"
+    device: "cuda"
+    torch_dtype: "float16"
+    variant: "fp16"
+    use_safetensors: true
+    enable_xformers: true
+    enable_cpu_offload: false
+    enable_sequential_cpu_offload: false
+    vae_path: null
+    scheduler: "euler_ancestral"
+    default_steps: 30
+    default_guidance_scale: 7.5
+    default_width: 1024
+    default_height: 1024
+
+  # Video Generation (SVD)
+  video:
+    provider: local_python
+    backend: diffusers
+    model_path: "C:/Models/svd-xt"
+    device: "cuda"
+    torch_dtype: "float16"
+    variant: "fp16"
+    use_safetensors: true
+    enable_xformers: true
+    enable_cpu_offload: false
+    num_frames: 25
+    fps: 7
+    motion_bucket_id: 127
+    noise_aug_strength: 0.02
+    decode_chunk_size: 8
+
+  # Text-to-Speech (XTTS v2)
+  tts:
+    provider: local_python
+    backend: transformers
+    model_path: "C:/Models/xtts-v2"
+    device: "cuda"
+    torch_dtype: "float16"
+    speaker_wav: null
+    language: "en"
+    speed: 1.0
+
+  # Music Generation (MusicGen)
+  music:
+    provider: local_python
+    backend: transformers
+    model_path: "C:/Models/musicgen-large"
+    device: "cuda"
+    torch_dtype: "float16"
+    max_duration: 30.0
+
+  # Sound Effects (AudioLDM 2)
+  sfx:
+    provider: local_python
+    backend: diffusers
+    model_path: "C:/Models/audioldm2"
+    device: "cuda"
+    torch_dtype: "float16"
+    max_duration: 10.0

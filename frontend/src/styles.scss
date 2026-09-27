@@ -1,0 +1,628 @@
+// Cinematic Multi-Language Video Studio - Global Styles
+// Angular Material Theme Configuration (v18+ compatible) - Using M2 compatibility layer
+
+@use '@angular/material' as matCore;
+@use 'sass:color';
+@use 'sass:map';
+
+// Custom color palette using the M2 theming API (compatibility layer)
+// Define contrast colors for custom palettes
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+
+$cinematic-primary: matCore.m2-define-palette((
+  50: #e8eaf6,
+  100: #c5cae9,
+  200: #9fa8da,
+  300: #7986cb,
+  400: #5c6bc0,
+  500: #3f51b5,
+  600: #3949ab,
+  700: #303f9f,
+  800: #283593,
+  900: #1a237e,
+  A100: #8c9eff,
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+));
+
+$cinematic-accent: matCore.m2-define-palette((
+  50: #fff8e1,
+  100: #ffecb3,
+  200: #ffe082,
+  300: #ffd54f,
+  400: #ffd000,
+  500: #ffc107,
+  600: #ffb300,
+  700: #ffa000,
+  800: #ff8f00,
+  900: #ff6f00,
+  A100: #ffff8d,
+  A200: #ffff00,
+  A400: #ffea00,
+  A700: #ffd600,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $dark-primary-text,
+    800: $dark-primary-text,
+    900: $dark-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+));
+
+$cinematic-warn: matCore.m2-define-palette((
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #f44336,
+  600: #e53935,
+  700: #d32f2f,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+));
+
+// 1. Core mixin setup initialization (Mandatory for Angular Material)
+@include matCore.core();
+
+// 2. Define theme using the correct M2 configurations under matCore namespace
+$cinematic-theme: matCore.m2-define-light-theme((
+  color: (
+    primary: $cinematic-primary,
+    accent: $cinematic-accent,
+    warn: $cinematic-warn,
+  ),
+  typography: matCore.m2-define-typography-config(
+    $font-family: '"Inter", "Roboto", sans-serif',
+    $headline-1: matCore.m2-define-typography-level($font-size: 2.5rem, $font-weight: 600, $line-height: 1.2),
+    $headline-2: matCore.m2-define-typography-level($font-size: 1.75rem, $font-weight: 600, $line-height: 1.3),
+    $body-1: matCore.m2-define-typography-level($font-size: 1rem, $font-weight: 400, $line-height: 1.5),
+    $button: matCore.m2-define-typography-level($font-size: 0.875rem, $font-weight: 500, $line-height: 1.5),
+  ),
+  density: 0,
+));
+
+// Dark theme variant
+$cinematic-dark-primary: matCore.m2-define-palette((
+  50: #e8eaf6,
+  100: #c5cae9,
+  200: #9fa8da,
+  300: #7986cb,
+  400: #5c6bc0,
+  500: #3f51b5,
+  600: #3949ab,
+  700: #303f9f,
+  800: #283593,
+  900: #1a237e,
+  A100: #8c9eff,
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+));
+
+$cinematic-dark-accent: matCore.m2-define-palette((
+  50: #fff8e1,
+  100: #ffecb3,
+  200: #ffe082,
+  300: #ffd54f,
+  400: #ffd000,
+  500: #ffc107,
+  600: #ffb300,
+  700: #ffa000,
+  800: #ff8f00,
+  900: #ff6f00,
+  A100: #ffff8d,
+  A200: #ffff00,
+  A400: #ffea00,
+  A700: #ffd600,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $dark-primary-text,
+    800: $dark-primary-text,
+    900: $dark-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+));
+
+$cinematic-dark-warn: matCore.m2-define-palette((
+  50: #ffebee,
+  100: #ffcdd2,
+  200: #ef9a9a,
+  300: #e57373,
+  400: #ef5350,
+  500: #f44336,
+  600: #e53935,
+  700: #d32f2f,
+  800: #c62828,
+  900: #b71c1c,
+  A100: #ff8a80,
+  A200: #ff5252,
+  A400: #ff1744,
+  A700: #d50000,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+));
+
+$cinematic-dark-theme: matCore.m2-define-dark-theme((
+  color: (
+    primary: $cinematic-dark-primary,
+    accent: $cinematic-dark-accent,
+    warn: $cinematic-dark-warn,
+  ),
+  typography: matCore.m2-define-typography-config(
+    $font-family: '"Inter", "Roboto", sans-serif',
+  ),
+  density: 0,
+));
+
+// 3. Emit structural layouts and theme colors cleanly
+:root {
+  @include matCore.all-component-themes($cinematic-theme);
+}
+
+.dark-mode {
+  // Use all-component-colors for the secondary dark mapping variant to avoid duplicates
+  @include matCore.all-component-colors($cinematic-dark-theme);
+}
+
+// Global styles
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  background-color: #fafafa;
+  color: #1a1a2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+// Focus styles
+:focus-visible {
+  outline: 2px solid matCore.m2-get-color-from-palette($cinematic-primary, 500);
+  outline-offset: 2px;
+}
+
+// Selection styles
+::selection {
+  background-color: matCore.m2-get-color-from-palette($cinematic-primary, 200);
+  color: matCore.m2-get-color-from-palette($cinematic-primary, 900);
+}
+
+// Utility classes
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gap-1 { gap: 4px; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+.gap-5 { gap: 20px; }
+.gap-6 { gap: 24px; }
+
+.p-1 { padding: 4px; }
+.p-2 { padding: 8px; }
+.p-3 { padding: 12px; }
+.p-4 { padding: 16px; }
+.p-5 { padding: 20px; }
+.p-6 { padding: 24px; }
+
+.m-1 { margin: 4px; }
+.m-2 { margin: 8px; }
+.m-3 { margin: 12px; }
+.m-4 { margin: 16px; }
+.m-5 { margin: 20px; }
+.m-6 { margin: 24px; }
+
+// Card styles
+.app-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e8e8;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+}
+
+// Button variants
+.btn-primary {
+  background: matCore.m2-get-color-from-palette($cinematic-primary, 600);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background: matCore.m2-get-color-from-palette($cinematic-primary, 700);
+  }
+  
+  &:disabled {
+    background: #c1c1c1;
+    cursor: not-allowed;
+  }
+}
+
+.btn-secondary {
+  background: transparent;
+  color: matCore.m2-get-color-from-palette($cinematic-primary, 600);
+  border: 1px solid matCore.m2-get-color-from-palette($cinematic-primary, 600);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: matCore.m2-get-color-from-palette($cinematic-primary, 50);
+  }
+}
+
+.btn-danger {
+  background: matCore.m2-get-color-from-palette($cinematic-warn, 600);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background: matCore.m2-get-color-from-palette($cinematic-warn, 700);
+  }
+}
+
+// Form styles
+.form-field {
+  width: 100%;
+  margin-bottom: 16px;
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.875rem;
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    
+    &:focus {
+      border-color: matCore.m2-get-color-from-palette($cinematic-primary, 500);
+      box-shadow: 0 0 0 3px matCore.m2-get-color-from-palette($cinematic-primary, 100);
+      outline: none;
+    }
+    
+    &::placeholder {
+      color: #999;
+    }
+  }
+  
+  .error-message {
+    color: matCore.m2-get-color-from-palette($cinematic-warn, 600);
+    font-size: 0.75rem;
+    margin-top: 4px;
+  }
+}
+
+// Progress bar
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e8e8e8;
+  border-radius: 4px;
+  overflow: hidden;
+  
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, 
+      matCore.m2-get-color-from-palette($cinematic-primary, 500), 
+      matCore.m2-get-color-from-palette($cinematic-accent, 500)
+    );
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+}
+
+// Status badges
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  
+  &.status-draft { background: #e8e8e8; color: #666; }
+  &.status-in-progress { background: #e3f2fd; color: #1565c0; }
+  &.status-review { background: #fff3e0; color: #e65100; }
+  &.status-completed { background: #e8f5e9; color: #2e7d32; }
+  &.status-archived { background: #f3e5f5; color: #7b1fa2; }
+  &.status-failed { background: #ffebee; color: #c62828; }
+  &.status-queued { background: #f5f5f5; color: #757575; }
+  &.status-running { background: #e3f2fd; color: #1565c0; }
+  &.status-paused { background: #fff3e0; color: #e65100; }
+  &.status-cancelled { background: #fafafa; color: #9e9e9e; }
+}
+
+// Language flags
+.language-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #e8e8e8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: matCore.m2-get-color-from-palette($cinematic-primary, 300);
+    background: matCore.m2-get-color-from-palette($cinematic-primary, 50);
+  }
+  
+  &.selected {
+    border-color: matCore.m2-get-color-from-palette($cinematic-primary, 500);
+    background: matCore.m2-get-color-from-palette($cinematic-primary, 50);
+    color: matCore.m2-get-color-from-palette($cinematic-primary, 700);
+  }
+  
+  .flag-icon {
+    width: 20px;
+    height: 14px;
+    border-radius: 2px;
+    object-fit: cover;
+  }
+}
+
+// Video player
+.video-player {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+// Image preview
+.image-preview {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+// Timeline
+.timeline {
+  position: relative;
+  padding-left: 24px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e8e8e8;
+  }
+  
+  .timeline-item {
+    position: relative;
+    padding-bottom: 24px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid matCore.m2-get-color-from-palette($cinematic-primary, 500);
+      z-index: 1;
+    }
+    
+    &.completed::before {
+      background: matCore.m2-get-color-from-palette($cinematic-primary, 500);
+    }
+    
+    &.current::before {
+      background: matCore.m2-get-color-from-palette($cinematic-accent, 500);
+      border-color: matCore.m2-get-color-from-palette($cinematic-accent, 500);
+      animation: pulse 2s infinite;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 matCore.m2-get-color-from-palette($cinematic-accent, 300); }
+  50% { box-shadow: 0 0 0 8px transparent; }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .full-width-mobile {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+// Print styles
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,72 @@
+# Root .dockerignore
+
+# Git
+.git/
+.gitignore
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Documentation
+README.md
+DEMO_README.md
+docs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Backend (has its own .dockerignore)
+backend/
+
+# Frontend (has its own .dockerignore)
+frontend/
+
+# Docker
+docker-compose.yml
+docker-compose.*.yml
+Dockerfile
+Dockerfile.*
+
+# Logs
+*.log
+logs/
+
+# Temp
+tmp/
+temp/
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Test
+*.test.ts
+*.spec.ts
+coverage/
+.nyc_output/
+
+# Build
+dist/
+build/
+*.egg-info/
